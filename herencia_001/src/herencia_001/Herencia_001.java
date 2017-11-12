@@ -10,7 +10,7 @@ import personal.Trabajador;
 
 /**
  *
- * @author JRecords
+ * @author Carlos Saca
  */
 public class Herencia_001 {
 

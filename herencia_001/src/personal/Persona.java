@@ -59,7 +59,7 @@ public class Persona {
     public String toString() {
         String cadena = String.format("\n\t%s"
                 + " %s\n"
-                + "\t%s Años \n"
+                + "\tEdad %s Años \n"
                 + "\tCI: %s\n",
                 obtenerNombre(), obtenerApellidos(), obtenerEdad(), obtenerDedula());
         return cadena;

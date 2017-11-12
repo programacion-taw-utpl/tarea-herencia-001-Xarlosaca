@@ -16,7 +16,7 @@ public class Empresa {
     private String nombre;
     private String siglas;
     private String ciudad;
-    private Trabajador[] trabajadores;
+    protected Trabajador[] trabajadores;
 
     public Empresa(String n_e, String s, String c, Trabajador[] tr) {
         establecerNombre_e(n_e);
@@ -40,6 +40,7 @@ public class Empresa {
     public String obtenerSiglas() {
         return siglas;
     }
+
     public void establecerCiudad(String c) {
         ciudad = c;
     }
@@ -47,27 +48,17 @@ public class Empresa {
     public String obtenerCiudad() {
         return ciudad;
     }
+
     public void establecerTrabajadores(Trabajador[] tr) {
         trabajadores = tr;
     }
 
-    public Trabajador[] obtenerTrabajadores() {        
-        return trabajadores;
-    }
-
     @Override
     public String toString() {
-        String trabajadores = "";
-        Trabajador[] A = obtenerTrabajadores();
-        for (int i = 0; i < A.length; i++) {
-            trabajadores = String.format("%s%s", trabajadores, A[i]);
-        }
         String cadena = String.format("EMPRESA: %s\n"
                 + "SIGLAS: %s\n"
-                + "CIUDAD: %s\n"
-                +"LISTA DE TRABAJADORES:\n"
-                + "%s",
-                obtenerNombre(),obtenerSiglas(),obtenerCiudad(), trabajadores);
+                + "CIUDAD: %s",
+                obtenerNombre(), obtenerSiglas(), obtenerCiudad());
         return cadena;
     }
 }

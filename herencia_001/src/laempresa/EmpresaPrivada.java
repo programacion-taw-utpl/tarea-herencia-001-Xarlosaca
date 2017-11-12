@@ -37,13 +37,23 @@ public class EmpresaPrivada extends Empresa {
     public int obtenerNumero_sucursales() {
         return numero_sucursales;
     }
+    public Trabajador[] obtenerTrabajadores() {        
+        return trabajadores;
+    }
 
     @Override
     public String toString() {
+        String trabajadores = "";
+        Trabajador[] A = obtenerTrabajadores();
+        for (int i = 0; i < A.length; i++) {
+            trabajadores = String.format("%s%s", trabajadores, A[i]);
+        }
         String cadena = String.format("%s\n"
                 + "VENTAS: $ %.2f\n"
-                + "SUCURSALES: %s\n",
-                super.toString(), obtenerVentas_m(), obtenerNumero_sucursales());
+                + "SUCURSALES: %s\n \n"
+                +"LISTA DE TRABAJADORES"
+                +"%s",
+                super.toString(), obtenerVentas_m(), obtenerNumero_sucursales(), trabajadores);
         return cadena;
     }
 }
